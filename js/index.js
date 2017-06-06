@@ -4,9 +4,22 @@ const render = (root) => {
   root.empty();
   const wrapper = $('<div class="wrapper"></div>');
   wrapper.append(Header(_ => render(root)));
-  wrapper.append(SearchGas());
+
+  if (state.selectedStation == null) {
+    wrapper.append(SearchGas(_ => {
+      render(root);
+      }));
+    wrapper.append(StationContainer(_ => {
+        render(root);
+    }));
+  } else {
+    wrapper.append(StationDetails(_ => {
+      render(root);
+    }));
+  }
+
   root.append(wrapper);
-}
+};
 
 const state = {
   stations: null,
