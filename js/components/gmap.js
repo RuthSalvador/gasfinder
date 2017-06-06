@@ -29,9 +29,9 @@ const StationDetails = (update) => {
 }
 
 //$('input').filter(function() { return $(this).val() === 'a'; });
-
+/*
 var map = new GMaps({
       el: '#map',
       lat: -12.043333,
       lng: -77.028333
-    });
+    });*/

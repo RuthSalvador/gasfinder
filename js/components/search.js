@@ -2,7 +2,7 @@
 
 const SearchGas = () => {
   const search = $('<div class="container-search"></div>');
-  const input = $('<input type="search" placeholder="Ingresa tu distrito a buscar">');
+  const input = $('<input id="search-input" type="search" placeholder="Ingresa tu distrito a buscar">');
   const span = $('<span class="fa fa-search" aria-hidden="true"></span>');
 
   search.append(input);
