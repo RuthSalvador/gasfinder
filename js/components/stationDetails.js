@@ -27,5 +27,5 @@ const StationContainer = (update) => {
     contStation.append(StationItem(station, update));
   });
 
-  return contStation;
+  //return contStation;
 }
