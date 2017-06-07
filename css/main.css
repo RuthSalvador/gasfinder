@@ -80,3 +80,13 @@ input {
   margin-right: 7px;
   line-height: 2.5;
 }
+
+button {
+  background-color: #F44336;
+  color: #fff;
+  display: block;
+  border: 1px solid #F44336;
+  padding: 7px;
+  margin-top: 7px;
+  cursor: pointer;
+}
