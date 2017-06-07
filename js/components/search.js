@@ -5,26 +5,26 @@ const SearchGas = (update) => {
   const search = $('<div class="container-search"></div>');
   const input = $('<input id="search-input" type="search" placeholder="Ingresa tu distrito a buscar">');
   const span = $('<span class="fa fa-search" aria-hidden="true"></span>');
-  const prueba = $('<div class="station"></div>');
+  const filterSearch = $('<div class="station"></div>');
 
   allSearch.append(search);
   search.append(input);
   search.append(span);
-  allSearch.append(prueba);
+  allSearch.append(filterSearch);
 
 	input.on('keyup',(e) => {
-    //const prueba = StationContainer(update);
+    //const filterSearch = StationContainer(update);
     if(input.val() != "") {
       const distri = filterByDistrict(state.stations, input.val());
-      biRender(prueba,distri, update);
+      biRender(filterSearch,distri, update);
     }
   });
 
   return allSearch;
 }
-const biRender = (prueba,distri,update) => {
-  prueba.empty();
+const biRender = (filterSearch,distri,update) => {
+  filterSearch.empty();
   distri.forEach(districtStation => {
-    prueba.append(StationItem(districtStation,update));
+    filterSearch.append(StationItem(districtStation,update));
   });
 }
