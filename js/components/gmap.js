@@ -29,7 +29,13 @@ const StationDetails = (update) => {
     update();
   })
 
-
+$(() => {
+  const map = new GMaps({
+        div: '#map',
+        lat: state.selectedStation.lat,
+        lng: state.selectedStation.long,
+      });
+});
 return gmapContainer;
 
 }
