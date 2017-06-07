@@ -13,7 +13,7 @@ const SearchGas = (update) => {
   allSearch.append(filterSearch);
 
 	input.on('keyup',(e) => {
-    //const filterSearch = StationContainer(update);
+    
     if(input.val() != "") {
       const distri = filterByDistrict(state.stations, input.val());
       biRender(filterSearch,distri, update);

@@ -9,6 +9,7 @@ const StationDetails = (update) => {
   const hr = $('<hr>');
   const adStation = $('<p class="line">'+ state.selectedStation.address + '</p>');
   const back = $('<button>Regresar</button>');
+  const distance = $('<p></p>');
 
   gmapContainer.append(gmap);
   gmapContainer.append(description);
@@ -31,10 +32,40 @@ const StationDetails = (update) => {
 
 $(() => {
   const map = new GMaps({
-        div: '#map',
-        lat: state.selectedStation.lat,
-        lng: state.selectedStation.long,
+    div: '#map',
+    lat: state.selectedStation.lat,
+    lng: state.selectedStation.long,
+  });
+
+  map.addMarker({
+    lat: state.selectedStation.lat,
+    lng: state.selectedStation.long,
+    title: state.selectedStation.name,
+    infoWindow: {
+    content: 'Grifo '+ state.selectedStation.name,
+    }
+  });
+
+  var latitud, longitud;
+
+  GMaps.geolocate({
+    success: function(position) {
+       latitud = position.coords.latitude;
+       longitud = position.coords.longitude;
+
+      map.addMarker({
+        lat: latitud,
+        lng: longitud,
+        title: 'Mi ubicación',
+        infoWindow: {
+        content: 'Mi ubicación',
+        }
       });
+    },
+    error: function(error) {
+      alert('Tenemos un problema con encontrar su ubicación');
+    },
+  });
 });
 return gmapContainer;
 
