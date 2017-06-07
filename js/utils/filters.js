@@ -1,14 +1,12 @@
 'use strict';
 
 /*const filterByDistrict = (stations,query) => {
-
 }*/
 
 /*
 $(function(){
 	$("#search-input").keyup(function(){
 		var texto = $(this).val();
-
 		$("#ulItens li").css("display", "block");
 		$("#ulItens li").each(function(){
 			if($(this).text().indexOf(texto) < 0)

@@ -68,3 +68,14 @@ input {
 .line {
   line-height: 1.8;
 }
+
+.description h1 {
+  font-size: 1.5em;
+}
+
+.products-station {
+  background-color: #dedede;
+  padding: 7px;
+  margin-right: 7px;
+  line-height: 2.5;
+}

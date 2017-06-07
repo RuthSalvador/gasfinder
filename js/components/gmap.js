@@ -8,7 +8,6 @@ const StationDetails = (update) => {
   const titleStation = $('<h1> Grifo '+ state.selectedStation.name + '</h1>');
   const hr = $('<hr>');
   const adStation = $('<p class="line">'+ state.selectedStation.address + '</p>');
-  const productsStation = $('<span>'+ state.selectedStation.products +'</span><br>');
   const back = $('<button>Regresar</button>');
 
   gmapContainer.append(gmap);
@@ -16,7 +15,12 @@ const StationDetails = (update) => {
   description.append(titleStation);
   description.append(hr);
   description.append(adStation);
-  description.append(productsStation);
+
+  state.selectedStation.products.forEach((e)=> {
+    const productsStation = $('<span class="products-station">'+ e +'</span>');
+    description.append(productsStation);
+  })
+
   description.append(back);
 
   back.on('click',(e) => {
