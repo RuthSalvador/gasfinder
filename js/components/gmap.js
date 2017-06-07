@@ -35,6 +35,7 @@ $(() => {
     div: '#map',
     lat: state.selectedStation.lat,
     lng: state.selectedStation.long,
+    zoom: 12,
   });
 
   map.addMarker({
@@ -61,11 +62,21 @@ $(() => {
         content: 'Mi ubicación',
         }
       });
+      map.drawRoute({
+      origin: [latitud, longitud],
+      destination: [state.selectedStation.lat, state.selectedStation.long],
+      travelMode: 'driving',
+      strokeColor: '#131540',
+      strokeOpacity: 0.6,
+      strokeWeight: 6
+    });
     },
     error: function(error) {
       alert('Tenemos un problema con encontrar su ubicación');
-    },
+    }
   });
+
+
 });
 return gmapContainer;
 
